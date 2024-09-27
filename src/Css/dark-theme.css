@@ -1,0 +1,11 @@
+body {
+    color: #fff;
+    background-color: #343a40;
+}
+
+.navbar, .card {
+    background-color: #495057;
+    color: #fff;
+}
+
+/* Additional styles for dark mode */
