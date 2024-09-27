@@ -1,60 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import '../Css/Login.css'; // Import your CSS styles if you separate them
+import '../Css/Login.css'; 
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../context/AuthProvider';
 
 function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState(null);
-    const navigate = useNavigate();
 
-    useEffect(() => {
-        const storedUsername = sessionStorage.getItem('username');
+    const [input, setInput] = useState({
+        username: "",
+        password: "",
+      });
+    
+      const auth = useAuth();
+      const handleSubmitEvent = (e) => {
         debugger
-        if (storedUsername) {
-            navigate('/dashboard'); // Redirect to dashboard if already logged in
-        }
-    }, [navigate]);
-
-    const handleLogin = (e) => {
         e.preventDefault();
-
-        // Simulate authentication logic
-        if (username === 'Test' && password === 'Test123#') {
-            sessionStorage.setItem('username', username);
-            navigate('/dashboard'); // Redirect to dashboard
-        } else {
-            setError('Invalid username or password');
+        if (input.username !== "" && input.password !== "") {
+          auth.loginAction(input);
+          return;
         }
+        alert("pleae provide a valid input");
+      };
+
+      const handleInput = (e) => {
+        const { name, value } = e.target; 
+        setInput({
+            ...input, 
+            [name]: value, 
+        });
     };
 
     return (
-        <div className="wrapper fadeInDown">
+        <div className="wrapper fadeInDown d-flex align-items-center justify-content-center" style={{background:"aliceblue"}}>
             <div id="formContent">
                 <div id="formFooter">
-                    {/* Placeholder for any footer items */}
+                    
                 </div>
-                <form onSubmit={handleLogin} style={{ padding: '45px' }}>
-                    {error && (
-                        <div className="alert alert-danger" role="alert">
-                            <p>{error}</p>
-                        </div>
-                    )}
+                 <form onSubmit={handleSubmitEvent} style={{ padding: '45px' }}>
+                   
                     <input
                         type="text"
-                        id="username"
+                        id="user-email"
+                        name="username"
                         className="fadeIn second"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        onChange={handleInput}
                         placeholder="User Name"
                         required
                     />
                     <input
                         type="text" // This should be type="password" instead of text for security
                         id="password"
+                        name="password"
                         className="fadeIn third"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        onChange={handleInput}
                         placeholder="Password"
                         required
                     />
@@ -68,7 +65,39 @@ function Login() {
                     <a className="underlineHover" href="#">
                         Forgot Password?
                     </a>
-                </div>
+                </div> 
+                {/* <form onSubmit={handleSubmitEvent}>
+                    <div className="form_control">
+                        <label htmlFor="user-email">Email:</label>
+                        <input
+                            type="text"
+                            id="user-email"
+                            name="username"
+                            placeholder="example@yahoo.com"
+                            aria-describedby="user-email"
+                            aria-invalid="false"
+                            onChange={handleInput}
+                        />
+                        <div id="user-email" className="sr-only">
+                            Please enter a valid username. It must contain at least 6 characters.
+                        </div>
+                    </div>
+                    <div className="form_control">
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            aria-describedby="user-password"
+                            aria-invalid="false"
+                            onChange={handleInput}
+                        />
+                        <div id="user-password" className="sr-only">
+                            your password should be more than 6 character
+                        </div>
+                    </div>
+                    <button className="btn-submit fadeIn fourth btn-dark">Log In</button>
+                </form> */}
             </div>
         </div>
     );
