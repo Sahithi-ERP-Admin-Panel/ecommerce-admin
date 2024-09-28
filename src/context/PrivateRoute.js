@@ -14,7 +14,6 @@ import { useAuth } from "./AuthProvider";
 
 const PrivateRoute = () => {
   const { token } = useAuth(); 
-  debugger
   if (!token) {
     return <Navigate to="/" />; 
   }

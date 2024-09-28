@@ -1,0 +1,16 @@
+{
+    "dashoard_label":"Dashboard",
+    "default_label":"Default",
+    "orders_label":"Orders",
+    "search_label":"Search",
+    "sno_lable":"S.No",
+    "order_no_label":"Order Number",
+    "customer_no_label":"Customer Number",
+    "po_no_label":"P.O Number",
+    "shipping_date_label":"Shipping date",
+    "shipping_method_label":"Shipping Method",
+    "part_number_label":"Part Number",
+    "quantity_label":"Quantity",
+    "comments_label":"Comments",
+    "status_label":"Status"
+}

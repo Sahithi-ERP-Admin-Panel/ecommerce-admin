@@ -1,5 +1,7 @@
 /*!
  * AdminKit PRO v3.4.0 (https://adminkit.io/)
+
+
  * Copyright 2023 Paul Laros
  * Copyright 2023 AdminKit
  */
@@ -47,7 +49,7 @@
      --bs-info-rgb: 23, 162, 184;
      --bs-warning-rgb: 252, 185, 44;
      --bs-danger-rgb: 220, 53, 69;
-     --bs-light-rgb: 245, 247, 251;
+     --bs-light-rgb: 208,207,205;
      --bs-dark-rgb: 33, 37, 41;
      --bs-primary-text-emphasis: #183258;
      --bs-secondary-text-emphasis: #2b2f32;
@@ -126,7 +128,13 @@
      --bs-form-valid-color: #1cbb8c;
      --bs-form-valid-border-color: #1cbb8c;
      --bs-form-invalid-color: #dc3545;
-     --bs-form-invalid-border-color: #dc3545
+     --bs-form-invalid-border-color: #dc3545;
+/* standard colors for projects */
+     --main-bg-primary-color: #003b71; 
+     --main-bg-secondary-color: #0071b9; 
+     --main-secoundary-bg-primary-color: #00a9e0;
+     --main-secoundary-bg-secondary-color: #898a8d;
+     --main-secoundary-bg-teritery-color: #d0cfcd;
  }
  
  *,
@@ -149,9 +157,11 @@
      font-weight: var(--bs-body-font-weight);
      line-height: var(--bs-body-line-height);
      margin: 0;
+     overflow: hidden !important;
      text-align: var(--bs-body-text-align);
      -webkit-text-size-adjust: 100%;
      -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
  }
  
  hr {
@@ -375,7 +385,9 @@
  
  th {
      text-align: inherit;
-     text-align: -webkit-match-parent
+     text-align: -webkit-match-parent;
+     border-right: 1px solid lightgray !important;
+     width: auto;
  }
  
  tbody,
@@ -385,7 +397,9 @@
  thead,
  tr {
      border: 0 solid;
-     border-color: inherit
+     border-color: inherit;
+     border-right: 1px solid lightgray !important;
+    
  }
  
  label {
@@ -2430,10 +2444,11 @@
  
  .form-control:focus {
      background-color: #fff;
-     border-color: #0b3270;
+     /* border-color: #0b3270; */
      box-shadow: 0 0 0 .25rem rgba(59, 125, 180, 0);
      color: #495057;
-     outline: 0
+     outline: 0;
+     border: 0;
  }
  
  .form-control::-webkit-date-and-time-value {
@@ -17250,7 +17265,7 @@
  
  .navbar {
      border-bottom: 0;
-     box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1)
+     /* box-shadow: 0 0 2rem 0 rgba(33, 37, 41, .1) */
  }
  
  @media(max-width:767.98px) {
@@ -17261,7 +17276,8 @@
  
  .navbar .avatar {
      margin-bottom: -15px;
-     margin-top: -15px
+     margin-top: -15px;
+     width: 30PX;
  }
  
  .navbar-nav {
@@ -17625,7 +17641,7 @@
  
  .sidebar,
  body[data-theme=dark] .sidebar {
-     background: #222e3c
+     background: var(--main-bg-primary-color);
  }
  
  body[data-theme=light] .sidebar {
@@ -17906,7 +17922,7 @@
  }
  
  .sidebar-dropdown .sidebar-link:before {
-     content: "→";
+     content: "o";
      display: inline-block;
      left: -14px;
      position: relative;
@@ -35639,5 +35655,15 @@
  .no-box-shadow {
     box-shadow: none !important;
 }
-
- 
+.b-white{
+    background-color: white !important;
+    background: white !important;
+}
+.bg-purple{
+    background-color: purple !important;
+    background: purple !important;
+}
+.bg-orange{
+    background-color: orange !important;
+    background: orange !important;
+}
