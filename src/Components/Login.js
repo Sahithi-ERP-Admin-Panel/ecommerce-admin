@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import  '../Css/Login.css'; 
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
+import { Navigate } from 'react-router-dom';
 
 function Login() {
 
@@ -11,6 +12,11 @@ function Login() {
       });
     
       const auth = useAuth();
+      const { token } = useAuth(); 
+        if (token) {
+            return <Navigate to="/dashboard" />;
+        }
+
       const handleSubmitEvent = (e) => {
         debugger
         e.preventDefault();

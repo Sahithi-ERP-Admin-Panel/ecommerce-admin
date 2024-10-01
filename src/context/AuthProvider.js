@@ -9,26 +9,32 @@ const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const loginAction = async (data) => {
     try {
-        debugger
-      const response = await fetch("http://localhost:8080/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      const res = await response.json();
+      debugger
+      // const response = await fetch("http://localhost:8080/login", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify(data),
+      // });
+      const res = {
+        message : "success",
+        token : "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJiYWx1IiwiaWF0IjoxNzI3NzU0MzIwLCJleHAiOjE3Mjc3NTYxMjB9.Tn9d9v_M5rV3UFV-BdIQZ6lsch2W0xHgap5Ot3ORFQw",
+        userName : "balu"
+      }
+
+      //await response.json();
       if (res.token) {
         setUser(res.userName);
         setToken(res.token);
         localStorage.setItem("site", res.token);
         navigate("/dashboard");
         return;
-      }else{
-        if(res.message)
-            alert(res.message)
+      } else {
+        if (res.message)
+          alert(res.message)
         else
-            alert("something went wrong");
+          alert("something went wrong");
       }
       throw new Error(res.message);
     } catch (err) {
