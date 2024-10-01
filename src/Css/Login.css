@@ -1,5 +1,5 @@
 html {
-    background-color: #56baed;
+    /* background-color: #56baed; */
   }
   
   body {
@@ -7,14 +7,14 @@ html {
     height: 100vh;
   }
   
-  a {
+   a {
     color: #92badd;
     display:inline-block;
     text-decoration: none;
     font-weight: 400;
   }
   
-  h2 {
+   h2 {
     text-align: center;
     font-size: 16px;
     font-weight: 600;
@@ -28,7 +28,7 @@ html {
   
   /* STRUCTURE */
   
-  .wrapper {
+   .wrapper {
     display: flex;
     align-items: center;
     flex-direction: column; 
@@ -38,7 +38,7 @@ html {
     padding: 20px;
   }
   
-  #formContent {
+   #formContent {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     background: #fff;
@@ -52,7 +52,7 @@ html {
     text-align: center;
   }
   
-  #formFooter {
+   #formFooter {
     background-color: #f6f6f6;
     border-top: 1px solid #dce8f1;
     padding: 25px;
@@ -65,11 +65,11 @@ html {
   
   /* TABS */
   
-  h2.inactive {
+   h2.inactive {
     color: #cccccc;
   }
   
-  h2.active {
+   h2.active {
     color: #0d0d0d;
     border-bottom: 2px solid #5fbae9;
   }
@@ -78,7 +78,7 @@ html {
   
   /* FORM TYPOGRAPHY*/
   
-  input[type=button], input[type=submit], input[type=reset]  {
+   .login-form input[type=button], input[type=submit], input[type=reset]  {
     background-color: #4a4a4a;;
     border: none;
     color: white;
@@ -100,11 +100,11 @@ html {
     transition: all 0.3s ease-in-out;
   }
   
-  input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
+  .login-forminput [type=button]:hover, input[type=submit]:hover, input[type=reset]:hover  {
     background-color: #39ace7;
   }
   
-  input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
+   .login-form input[type=button]:active, input[type=submit]:active, input[type=reset]:active  {
     -moz-transform: scale(0.95);
     -webkit-transform: scale(0.95);
     -o-transform: scale(0.95);
@@ -112,7 +112,7 @@ html {
     transform: scale(0.95);
   }
   
-  input[type=text] {
+   .login-form input[type=text] {
     background-color: #f6f6f6;
     border: none;
     color: #0d0d0d;
@@ -133,12 +133,12 @@ html {
     border-radius: 5px 5px 5px 5px;
   }
   
-  input[type=text]:focus {
+  .login-form input[type=text]:focus {
     background-color: #fff;
-    border-bottom: 2px solid #5fbae9;
+    /* border-bottom: 2px solid #5fbae9; */
   }
   
-  input[type=text]:placeholder {
+  .login-form input[type=text]:placeholder {
     color: #cccccc;
   }
   
@@ -147,7 +147,7 @@ html {
   /* ANIMATIONS */
   
   /* Simple CSS3 Fade-in-down Animation */
-  .fadeInDown {
+   .fadeInDown {
     -webkit-animation-name: fadeInDown;
     animation-name: fadeInDown;
     -webkit-animation-duration: 1s;
@@ -187,7 +187,7 @@ html {
   @-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   @keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
   
-  .fadeIn {
+    .fadeIn {
     opacity:0;
     -webkit-animation:fadeIn ease-in 1;
     -moz-animation:fadeIn ease-in 1;
@@ -202,32 +202,32 @@ html {
     animation-duration:1s;
   }
   
-  .fadeIn.first {
+    .fadeIn.first {
     -webkit-animation-delay: 0.4s;
     -moz-animation-delay: 0.4s;
     animation-delay: 0.4s;
   }
   
-  .fadeIn.second {
+    .fadeIn.second {
     -webkit-animation-delay: 0.6s;
     -moz-animation-delay: 0.6s;
     animation-delay: 0.6s;
   }
   
-  .fadeIn.third {
+    .fadeIn.third {
     -webkit-animation-delay: 0.8s;
     -moz-animation-delay: 0.8s;
     animation-delay: 0.8s;
   }
   
-  .fadeIn.fourth {
+    .fadeIn.fourth {
     -webkit-animation-delay: 1s;
     -moz-animation-delay: 1s;
     animation-delay: 1s;
   }
   
   /* Simple CSS3 Fade-in Animation */
-  .underlineHover:after {
+    .underlineHover:after {
     display: block;
     left: 0;
     bottom: -10px;
@@ -238,11 +238,11 @@ html {
     transition: width 0.2s;
   }
   
-  .underlineHover:hover {
+    .underlineHover:hover {
     color: #0d0d0d;
   }
   
-  .underlineHover:hover:after{
+    .underlineHover:hover:after{
     width: 100%;
   }
   
@@ -250,21 +250,21 @@ html {
   
   /* OTHERS */
   
-  *:focus {
+    *:focus {
       outline: none;
   } 
   
-  #icon {
+   #icon {
     width:60%;
   }
 
-  .light {
+    .light {
     --background-color: #ffffff;
     --text-color: #000000;
 }
 
 /* Dark theme */
-.dark {
+  .dark {
     --background-color: #121212;
     --text-color: #ffffff;
 }

@@ -16,14 +16,17 @@ function Dashboard() {
     };
 
     return (
-        <div className="container-fluid p-0">
-            <Topbar toggleTheme={toggleTheme} theme={theme} />
+        <div className="container-fluid p-0" style={{overflow:"hidden"}}>
+           
             <div className="row flex-nowrap">
                 <div className={`col-auto col-md-3 col-xl-2 px-0 bg-light`}>
                     <Sidebar />
                 </div>
-                <div className={`col py-3 pe-4 bg-light`}>
-                    <Outlet />
+                <div className={`col bg-light ps-3`} style={{height:"100vh",overflow:"auto"}}>
+                    <Topbar toggleTheme={toggleTheme} theme={theme} />
+                    <div className='p-4'>
+                        <Outlet />
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../Css/Login.css'; 
+import  '../Css/Login.css'; 
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthProvider';
 
@@ -30,12 +30,12 @@ function Login() {
     };
 
     return (
-        <div className="wrapper fadeInDown d-flex align-items-center justify-content-center" style={{background:"aliceblue"}}>
-            <div id="formContent">
+        <div className="wrapper fadeInDown d-flex align-items-center justify-content-center">
+            <div id="formContent" className='login-form'>
                 <div id="formFooter">
                     
                 </div>
-                 <form onSubmit={handleSubmitEvent} style={{ padding: '45px' }}>
+                 <form onSubmit={handleSubmitEvent} style={{ padding: '45px' }} className='login-form'>
                    
                     <input
                         type="text"

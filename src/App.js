@@ -10,6 +10,7 @@ import Projects from './Components/Projects/Projects';
 import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './context/PrivateRoute';
 import DashboardContent from './Components/Dashboard/DashboardContent'
+import './Css/style.css'
 function App() {
   return (
     <Router>
