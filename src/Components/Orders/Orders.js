@@ -16,16 +16,16 @@ const Orders = ()=>{
                 <table class="table table-striped border rounded">
                     <thead>
                         <tr>
-                            <th>{messages.sno_lable}</th>
-                            <th>{messages.order_no_label}</th>
-                            <th>{messages.customer_no_label}</th>
-                            <th>{messages.po_no_label}</th>
-                            <th>{messages.shipping_date_label}</th>
-                            <th>{messages.shipping_method_label}</th>
-                            <th>{messages.part_number_label}</th>
-                            <th>{messages.quantity_label}</th>
-                            <th>{messages.comments_label}</th>
-                            <th>{messages.status_label}</th>
+                            <th className="text-center">{messages.sno_lable}</th>
+                            <th className="text-center">{messages.order_no_label}</th>
+                            <th className="text-center">{messages.customer_no_label}</th>
+                            <th className="text-center">{messages.po_no_label}</th>
+                            <th className="text-center">{messages.shipping_date_label}</th>
+                            <th className="text-center">{messages.shipping_method_label}</th>
+                            <th className="text-center">{messages.part_number_label}</th>
+                            <th className="text-center">{messages.quantity_label}</th>
+                            <th className="text-center">{messages.comments_label}</th>
+                            <th className="text-center">{messages.status_label}</th>
                             
                         </tr>
                     </thead>
@@ -40,7 +40,7 @@ const Orders = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Shipping</a></td>
+                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Completed</a></td>
                             
                         </tr>
                         <tr>
@@ -53,7 +53,7 @@ const Orders = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td><a class="p-1 px-2 text-decoration-none text-light bg-purple rounded" p-2="">Released</a></td>
+                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-purple rounded" p-2="">Released</a></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -65,7 +65,7 @@ const Orders = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Completed</a></td>
+                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Completed</a></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -77,7 +77,7 @@ const Orders = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td><a class="p-1 px-2 text-decoration-none text-light bg-danger rounded" p-2="">Failed</a></td>
+                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-danger rounded" p-2="">Failed</a></td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -89,7 +89,7 @@ const Orders = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td><a class="p-1 px-2 text-decoration-none text-light bg-warning rounded" p-2="">Refunded</a></td>
+                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-warning rounded" p-2="">Refunded</a></td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -101,7 +101,7 @@ const Orders = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td><a class="p-1 px-2 text-decoration-none text-light bg-orange rounded" p-2="">Pending</a></td>
+                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-orange rounded" p-2="">Pending</a></td>
                         </tr>
                     </tbody>
                 </table>

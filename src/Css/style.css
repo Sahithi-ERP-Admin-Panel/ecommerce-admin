@@ -18018,7 +18018,8 @@
      display: block;
      font-size: 1.15rem;
      font-weight: 600;
-     padding: 1.15rem 1.5rem
+     background-color: #fff;
+     padding: 0.5rem ;
  }
  
  body[data-theme=dark] .sidebar-brand {
