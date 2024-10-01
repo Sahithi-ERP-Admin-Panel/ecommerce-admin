@@ -12,5 +12,6 @@
     "part_number_label":"Part Number",
     "quantity_label":"Quantity",
     "comments_label":"Comments",
-    "status_label":"Status"
+    "status_label":"Status",
+    "pages_label": "Pages"
 }
