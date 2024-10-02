@@ -11,6 +11,8 @@ import AuthProvider from './context/AuthProvider';
 import PrivateRoute from './context/PrivateRoute';
 import DashboardContent from './Components/Dashboard/DashboardContent'
 import './Css/style.css'
+import Production from './Components/production/Production';
+import Warehouse from './Components/warehouse/Warehouse';
 function App() {
   return (
     <Router>
@@ -28,6 +30,8 @@ function App() {
               <Route path="payments" element={<Payments />} />
               <Route path="profile" element={<UserProfile />} />
               <Route path="projects" element={<Projects />} />
+              <Route path="production" element={<Production/>}/>
+              <Route path="warehouse" element={<Warehouse/>}/>
             </Route>
           </Route>
         </Routes>
