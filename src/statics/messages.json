@@ -1,6 +1,8 @@
 {
     "dashoard_label":"Dashboard",
     "default_label":"Default",
+    "ecommerce_label":"E Commerce",
+    "crm_label":"CRM",
     "orders_label":"Orders",
     "search_label":"Search",
     "sno_lable":"S.No",
@@ -13,5 +15,25 @@
     "quantity_label":"Quantity",
     "comments_label":"Comments",
     "status_label":"Status",
-    "pages_label": "Pages"
+    "receiving_label": "Receiving",
+    "production_label": "Production",
+    "Orders_label": "Orders",
+    "warehouse_label":"Warehouse",
+    "outgoing_label":"Outgoing",
+    "sales_label":"Sales Orders",
+    "accounts_label":"A/R",
+    "charts_label":"Charts",
+    "applications_label":"Applications",
+    "analytics_label":"Analytics",
+    "projects_label":"Projects",
+    "tables_label":"Data Tables",
+    "reports_label":"Reports",
+    "authentication_label": "Authentication",
+    "signin_label":"Sign in",
+    "signup_label":"Sign up",
+    "reset_label":"Reset",
+    "verification_label": "2-Step Verification"
+   
+
+
 }

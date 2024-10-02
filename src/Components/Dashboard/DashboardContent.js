@@ -93,8 +93,8 @@ const DashboardContent = () => {
                     <div className="card text-left bg-primary text-light border-0">
 
                         <div className="card-body">
-                            <h3 className="card-title">150</h3>
-                            <p className="card-text">New Orders</p>
+                            <h3 className="card-title">25</h3>
+                            <p className="card-text">Sales Orders</p>
 
                         </div>
                         <div className="card-footer bg-gradient border-0 text-center">
@@ -107,7 +107,7 @@ const DashboardContent = () => {
 
                         <div className="card-body">
                             <h3 className="card-title">53%</h3>
-                            <p className="card-text">Bounce Rate</p>
+                            <p className="card-text">Produciton</p>
 
                         </div>
                         <div className="card-footer bg-gradient border-0 text-center">
@@ -120,7 +120,7 @@ const DashboardContent = () => {
 
                         <div className="card-body">
                             <h3 className="card-title">44</h3>
-                            <p className="card-text">User Registrations</p>
+                            <p className="card-text">Warehouse</p>
 
                         </div>
                         <div className="card-footer bg-gradient border-0 text-center">
@@ -133,7 +133,7 @@ const DashboardContent = () => {
 
                         <div className="card-body">
                             <h3 className="card-title">65</h3>
-                            <p className="card-text">Unique Visitors</p>
+                            <p className="card-text">Inventory</p>
 
                         </div>
                         <div className="card-footer bg-gradient border-0 text-center">
@@ -144,7 +144,7 @@ const DashboardContent = () => {
             </div>          
             <div className='row p-3 justify-content-center align-item-center'>
                 <div className="col-lg-6 p-2">
-                    <Line data={lineData} />
+                    <line data = {lineData}/>
                 </div>
                 <div className="col-lg-6 p-2">
                     <Bar data={barData} />
