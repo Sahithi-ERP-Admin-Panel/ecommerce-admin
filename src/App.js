@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Login from './Components/Login';
 import Dashboard from './Components/Dashboard';
 import Customers from './Components/Customers/Customers';
-import Orders from './Components/Orders/Orders';
 import Payments from './Components/PaymentDetails/Payments';
 import UserProfile from './Components/UserProfile/UserProfile';
 import Projects from './Components/Projects/Projects';
@@ -13,6 +12,7 @@ import DashboardContent from './Components/Dashboard/DashboardContent'
 import './Css/style.css'
 import Production from './Components/production/Production';
 import Warehouse from './Components/warehouse/Warehouse';
+import Sales from './Components/sales/Sales';
 function App() {
   return (
     <Router>
@@ -26,12 +26,12 @@ function App() {
             <Route element={<Dashboard />}>
               <Route path="dashboard" element={<DashboardContent />} />
               <Route path="customers" element={<Customers />} />
-              <Route path="orders" element={<Orders />} />
               <Route path="payments" element={<Payments />} />
               <Route path="profile" element={<UserProfile />} />
               <Route path="projects" element={<Projects />} />
               <Route path="production" element={<Production/>}/>
               <Route path="warehouse" element={<Warehouse/>}/>
+              <Route path="sales" element={<Sales/>}/>
             </Route>
           </Route>
         </Routes>

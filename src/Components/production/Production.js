@@ -39,7 +39,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">In-Process</a></td>
+                            <td>abc</td>
                             
                         </tr>
                         <tr>
@@ -52,7 +52,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-purple rounded" p-2="">Pending</a></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -64,7 +64,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Credit hold</a></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -76,7 +76,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-danger rounded" p-2="">Waiting on Parts</a></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -88,7 +88,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-warning rounded" p-2="">Shipped</a></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -100,7 +100,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-orange rounded" p-2="">Pending</a></td>
+                            <td>abc</td>
                         </tr>
                     </tbody>
                 </table>
