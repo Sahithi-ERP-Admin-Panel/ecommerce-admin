@@ -597,7 +597,10 @@
  .list-inline,
  .list-unstyled {
      list-style: none;
-     padding-left: 0
+     padding-left: 0;
+     background: #d3d3d336;
+     border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
  }
  
  .list-inline-item {
@@ -17661,7 +17664,7 @@
  
  .sidebar-content,
  body[data-theme=dark] .sidebar-content {
-     background: #222e3c
+     background: white;
  }
  
  body[data-theme=light] .sidebar-content {
@@ -17676,21 +17679,23 @@
      flex-grow: 1;
      list-style: none;
      margin-bottom: 0;
-     padding-left: 0
+     padding-left: 0;
+     margin: 12px 12px 12px 22px;
  }
  
  .sidebar-link,
  a.sidebar-link {
      /* background: #222e3c; */
      border-left: 3px solid transparent;
-     color: rgba(233, 236, 239, .5);
+     color: #0000008c;
      cursor: pointer;
      display: block;
      font-weight: 400;
      padding: .625rem 1.625rem;
      position: relative;
      text-decoration: none;
-     transition: background .1s ease-in-out
+     transition: background .1s ease-in-out;
+     margin-top: 5px;
  }
  
  body[data-theme=dark] .sidebar-link,
@@ -17732,29 +17737,33 @@
  .sidebar-link i,
  .sidebar-link svg,
  a.sidebar-link i,
- a.sidebar-link svg {
-     color: rgba(233, 236, 239, .5);
+ a.sidebar-link svg,
+ a.sidebar-link svg g path {
+     color: #0000008c;
      margin-right: .75rem
  }
  
  body[data-theme=dark] .sidebar-link i,
  body[data-theme=dark] .sidebar-link svg,
  body[data-theme=dark] a.sidebar-link i,
- body[data-theme=dark] a.sidebar-link svg {
+ body[data-theme=dark] a.sidebar-link svg,
+ body[data-theme=dark] a.sidebar-link svg g path {
      color: rgba(233, 236, 239, .5)
  }
  
  body[data-theme=light] .sidebar-link i,
  body[data-theme=light] .sidebar-link svg,
  body[data-theme=light] a.sidebar-link i,
- body[data-theme=light] a.sidebar-link svg {
+ body[data-theme=light] a.sidebar-link svg ,
+ body[data-theme=light] a.sidebar-link svg g path{
      color: #495057
  }
  
  body[data-theme=colored] .sidebar-link i,
  body[data-theme=colored] .sidebar-link svg,
  body[data-theme=colored] a.sidebar-link i,
- body[data-theme=colored] a.sidebar-link svg {
+ body[data-theme=colored] a.sidebar-link svg ,
+ body[data-theme=colored] a.sidebar-link svg g path{
      color: rgba(233, 236, 239, .5)
  }
  
@@ -17763,7 +17772,8 @@
  }
  
  .sidebar-dropdown .sidebar-dropdown .sidebar-dropdown .sidebar-link {
-     padding: .625rem 1.5rem .625rem 5.75rem
+     /* padding: .625rem 1.5rem .625rem 5.75rem */
+     padding: 0;
  }
  
  .sidebar-link:focus {
@@ -17771,13 +17781,14 @@
  }
  
  .sidebar-link:hover {
-     background: #222e3c;
-     border-left-color: transparent
+     background: #d3d3d34a;
+     border-radius: 10px;
+     border-left-color: transparent;
  }
  
  .sidebar-link:hover,
  body[data-theme=dark] .sidebar-link:hover {
-     color: rgba(233, 236, 239, .75)
+     color: #277bf4;
  }
  
  body[data-theme=light] .sidebar-link:hover {
@@ -17807,24 +17818,29 @@
  .sidebar-link:hover svg,
  body[data-theme=dark] .sidebar-link:hover i,
  body[data-theme=dark] .sidebar-link:hover svg {
-     color: rgba(233, 236, 239, .75)
+     color: #277bf4;
  }
  
  body[data-theme=light] .sidebar-link:hover i,
  body[data-theme=light] .sidebar-link:hover svg {
-     color: #518be1
+     color: #277bf4;
  }
  
  body[data-theme=colored] .sidebar-link:hover i,
  body[data-theme=colored] .sidebar-link:hover svg {
-     color: rgba(233, 236, 239, .75)
+     color: #277bf4;
  }
  
  .sidebar-item.active .sidebar-link:hover,
  .sidebar-item.active>.sidebar-link {
-     background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .088) 50%, transparent);
-     border-left-color: #3b7ddd;
-     color: #e9ecef
+    background: #277bf4;
+    border-left-color: #3b7ddd;
+    color: #e9ecef;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    margin-top: 0;
  }
  
  body[data-theme=dark] .sidebar-item.active .sidebar-link:hover,
@@ -17844,7 +17860,8 @@
  
  body[data-theme=dark] .sidebar-item.active .sidebar-link:hover,
  body[data-theme=dark] .sidebar-item.active>.sidebar-link {
-     background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .088) 50%, transparent)
+    background: lightgray;
+     /* background: linear-gradient(90deg, rgba(59, 125, 221, .1), rgba(59, 125, 221, .088) 50%, transparent) */
  }
  
  body[data-theme=light] .sidebar-item.active .sidebar-link:hover,
@@ -17900,7 +17917,7 @@
      color: #adb5bd;
      font-size: 90%;
      font-weight: 400;
-     padding: .625rem 1.5rem .625rem 3.25rem
+     /* padding: .625rem 1.5rem .625rem 3.25rem */
  }
  
  body[data-theme=dark] .sidebar-dropdown .sidebar-link {
@@ -17922,7 +17939,7 @@
  }
  
  .sidebar-dropdown .sidebar-link:before {
-     content: "o";
+     content: "";
      display: inline-block;
      left: -14px;
      position: relative;
