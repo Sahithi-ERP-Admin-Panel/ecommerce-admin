@@ -1,0 +1,11 @@
+import messages from '../../statics/messages.json'
+const inventory = ()=>{
+    return(
+       <>
+       <h1>Inventory</h1>
+       </>
+
+     )
+}
+
+export default inventory;

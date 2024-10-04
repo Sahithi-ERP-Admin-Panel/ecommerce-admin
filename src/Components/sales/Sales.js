@@ -1,9 +1,8 @@
-import messages from '../../statics/messages.json'
-
-const Orders = ()=>{
+import messages from  '../../statics/messages.json'
+const sales = ()=>{
     return(
         <div className="box-body border b-white rounded-2">        
-        <h4 className="p-2 m-0 border-bottom">Orders</h4>
+        <h4 className="p-2 m-0 border-bottom">Sales Orders</h4>
         <div className="row p-2">
             <div className="col-1 d-flex justify-content-start align-items-bottom ">
                 <select className="px-3 py-1 border rounded-1 d-inline">
@@ -125,5 +124,4 @@ const Orders = ()=>{
 
     )
 }
-
-export default Orders;
+export default sales;

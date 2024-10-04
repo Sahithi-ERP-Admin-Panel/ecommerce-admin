@@ -34,10 +34,8 @@ const warehouse = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
                             <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-orange rounded" p-2="">In-Receiving</a></td>
+                            <td>abc</td>
                             
                         </tr>
                         <tr>
@@ -47,10 +45,8 @@ const warehouse = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
                             <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-purple rounded" p-2="">Insepction In-Process</a></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -59,10 +55,8 @@ const warehouse = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
                             <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Completed</a></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -71,10 +65,8 @@ const warehouse = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
                             <td className="text-center"></td>
+                            <td>abc</td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -83,10 +75,8 @@ const warehouse = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
                             <td className="text-center"></td>
+                            <td>abc</td>                          
                         </tr>
                         <tr>
                             <td>5</td>
@@ -95,9 +85,8 @@ const warehouse = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td>abc</td>
-                            <td>abc</td>
                             <td className="text-center"></td>
+                            <td>abc</td>                         
                         </tr>
                     </tbody>
                 </table>

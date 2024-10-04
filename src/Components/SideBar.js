@@ -15,42 +15,8 @@ const SideBar = ({ activeMenu, setActiveMenu }) => {
 						<img src={logo} className="img-fluid" />
 					</a>
 
-					<ul class="sidebar-nav">
-						<li class={`sidebar-item ${activeMenu === '/dashboard' || activeMenu === '/ecommercedashboard' || activeMenu === '/crmdashboard' ? 'active' : ''}`}>
-							<a href="/dashboard" onClick={() => handleMenuClick('/dashboard')} data-bs-target="#dashboards" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
-							{/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders align-middle"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg> */}
-							<svg class="custom-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width='24' height='24'>
-								<path fill="currentColor" d="M280.4 148.3L96 300.1V464a16 16 0 0 0 16 16l112.1-.3a16 16 0 0 0 15.9-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.6a16 16 0 0 0 16 16.1L464 480a16 16 0 0 0 16-16V300L295.7 148.3a12.2 12.2 0 0 0 -15.3 0zM571.6 251.5L488 182.6V44.1a12 12 0 0 0 -12-12h-56a12 12 0 0 0 -12 12v72.6L318.5 43a48 48 0 0 0 -61 0L4.3 251.5a12 12 0 0 0 -1.6 16.9l25.5 31A12 12 0 0 0 45.2 301l235.2-193.7a12.2 12.2 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0 -1.7-16.9z"/>
-							</svg>
-							<span class="align-middle">{messages.dashoard_label}</span>
-							</a>
-							<ul id="dashboards" class={`sidebar-dropdown list-unstyled collapse ${activeMenu === '/dashboard' || activeMenu === '/ecommercedashboard' || activeMenu === '/crmdashboard' ? 'show' : ''}`} data-bs-parent="#sidebar" >
-								<li class="sidebar-item active"><Link class="sidebar-link" onClick={() => handleMenuClick('/dashboard')} to="/dashboard">{messages.default_label}</Link></li>
-								<li class="sidebar-item active"><Link class="sidebar-link" onClick={() => handleMenuClick('/ecommercedashboard')} to="/ecommercedashboard">{messages.ecommerce_label}</Link></li>
-								<li class="sidebar-item active"><Link class="sidebar-link" onClick={() => handleMenuClick('/crmdashboard')} to="/crmdashboard">{messages.crm_label}</Link></li>
-							</ul>
-						</li>
 
-						<li class={`sidebar-item ${activeMenu === '/orders' ? 'active' : ''}`}>
-							<a class="sidebar-link" href="/orders" onClick={() => handleMenuClick('/orders')}>
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders align-middle"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-								<span class="align-middle">{messages.orders_label}</span>
-							</a>
-						</li>
 
-						<li class={`sidebar-item ${activeMenu === '/production' || activeMenu === '/receivingproduction' || activeMenu === '/warehouse' ? 'active' : ''}`}>
-							<a href="/receiving" onClick={() => handleMenuClick('/production')} data-bs-target="#receiving" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
-							<svg class="custom-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" width="24" height="24">
-								<path fill="currentColor" d="M528.1 301.3l47.3-208C578.8 78.3 567.4 64 552 64H159.2l-9.2-44.8C147.8 8 137.9 0 126.5 0H24C10.7 0 0 10.7 0 24v16c0 13.3 10.7 24 24 24h69.9l70.2 343.4C147.3 417.1 136 435.2 136 456c0 30.9 25.1 56 56 56s56-25.1 56-56c0-15.7-6.4-29.8-16.8-40h209.6C430.4 426.2 424 440.3 424 456c0 30.9 25.1 56 56 56s56-25.1 56-56c0-22.2-12.9-41.3-31.6-50.4l5.5-24.3c3.4-15-8-29.3-23.4-29.3H218.1l-6.5-32h293.1c11.2 0 20.9-7.8 23.4-18.7z"/>
-							</svg>
-							<span class="align-middle">{messages.receiving_label}</span>
-							</a>
-							<ul id="receiving" class={`sidebar-dropdown list-unstyled collapse ${activeMenu === '/production' || activeMenu === '/receivingproduction' || activeMenu === '/warehouse' ? 'show' : ''}`} data-bs-parent="#sidebar" >
-								{/* <li class="sidebar-item active"><a class="sidebar-link" href="/production" onClick={() => handleMenuClick('/production')}>{messages.production_label}</a></li> */}
-								<li class="sidebar-item active"><a class="sidebar-link" href="/receivingproduction" onClick={() => handleMenuClick('/receivingproduction')}>{messages.production_label}</a></li>
-								<li class="sidebar-item active"><a class="sidebar-link" href="/warehouse" onClick={() => handleMenuClick('/warehouse')}>{messages.warehouse_label}</a></li>
-							</ul>
-						</li>
 
 						<li class={`sidebar-item ${activeMenu === '/outgoing' || activeMenu === '/sales' || activeMenu === '/accounts' ? 'active' : ''}`}>
 							<a href="/outgoing" onClick={() => handleMenuClick('/outgoing')} data-bs-target="#outgoing" data-bs-toggle="collapse" class="sidebar-link collapsed" aria-expanded="false">
