@@ -17793,11 +17793,11 @@ li.sidebar-item {
 }
  .sidebar-link:hover,
  body[data-theme=dark] .sidebar-link:hover {
-     color: #277bf4;
+     color: #5b05c8;
  }
  
  body[data-theme=light] .sidebar-link:hover {
-     color: #518be1
+     color: #5b05c8
  }
  
  body[data-theme=colored] .sidebar-link:hover {
@@ -17823,39 +17823,39 @@ li.sidebar-item {
  .sidebar-link:hover svg,
  body[data-theme=dark] .sidebar-link:hover i,
  body[data-theme=dark] .sidebar-link:hover svg {
-     color: #277bf4;
+     color: #5b05c8;
  }
  
  body[data-theme=light] .sidebar-link:hover i,
  body[data-theme=light] .sidebar-link:hover svg {
-     color: #277bf4;
+     color: #5b05c8;
  }
  
  body[data-theme=colored] .sidebar-link:hover i,
  body[data-theme=colored] .sidebar-link:hover svg {
-     color: #277bf4;
+     color: #5b05c8;
  }
  
  .sidebar-item.active .sidebar-link:hover,
  .sidebar-item.active>.sidebar-link {
-    background: #277bf4;
-    border-left-color: #3b7ddd;
+    background: #5b05c8;
+    border-left-color: #5b05c8;
     color: #e9ecef;
-    border-top-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 0px;
-    border-bottom-right-radius: 0px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
     margin-top: 0;
  }
  
  body[data-theme=dark] .sidebar-item.active .sidebar-link:hover,
  body[data-theme=dark] .sidebar-item.active>.sidebar-link {
-     color: #e9ecef
+     color: #5b05c8
  }
  
  body[data-theme=light] .sidebar-item.active .sidebar-link:hover,
  body[data-theme=light] .sidebar-item.active>.sidebar-link {
-     color: #518be1
+     color: #5b05c8
  }
  
  body[data-theme=colored] .sidebar-item.active .sidebar-link:hover,
@@ -17955,7 +17955,7 @@ li.sidebar-item {
  .sidebar-dropdown .sidebar-item .sidebar-link:hover {
      background: transparent;
      border-left: 0;
-     color: #518be1;
+     color: #5b05c8;
      font-weight: 500
  }
  
@@ -17984,7 +17984,7 @@ li.sidebar-item {
  .sidebar-dropdown .sidebar-item.active .sidebar-link {
      background: transparent;
      border-left: 0;
-     color: #518be1;
+     color: #5b05c8;
      font-weight: 500;
  }
  
