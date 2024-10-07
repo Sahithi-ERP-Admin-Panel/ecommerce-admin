@@ -1,9 +1,9 @@
 $borderRadius: 10px;
 $spacer: 1rem;
-$primary: #406ff3;
+$primary: #5b05c8;
 $text: #6a778e;
 $linkHeight: $spacer * 3.5;
-$timing: 250ms;
+$timing: 500ms;
 $transition: $timing ease all;
 
 @mixin gooeyEffect($i) {
@@ -47,7 +47,7 @@ $transition: $timing ease all;
       width: $spacer * 5.5;
       color: $text;
       transition: $transition;
-      margin-top: 10px;
+      margin-top: 15px;
 
       span {
         position: absolute;
@@ -75,6 +75,7 @@ $transition: $timing ease all;
                 z-index: 1;
                 width: 30px !important;
                 height: 30px !important;
+                background: $primary;
                 transform: translate(0);
                 filter: drop-shadow(0 0 10px rgba(0, 0.1, 0, 0.6));
             }
@@ -106,40 +107,41 @@ $transition: $timing ease all;
           background: $primary;
           border-radius: $borderRadius * 1.75;
           transition: $timing cubic-bezier(1, 0.2, 0.1, 1.2) all;
-          margin-top: 10px;
+          margin-top: 15px;
+          padding: 10px;
         }
       }
 
-      @for $i from 1 to 12 {
-        &:first-child:nth-last-child(#{$i}),
-        &:first-child:nth-last-child(#{$i}) ~ li {
-          &:hover {
-            ~ li:last-child:before {
-              opacity: 1;
-            }
-          }
+      // @for $i from 1 to 12 {
+      //   &:first-child:nth-last-child(#{$i}),
+      //   &:first-child:nth-last-child(#{$i}) ~ li {
+      //     &:hover {
+      //       ~ li:last-child:before {
+      //         opacity: 1;
+      //       }
+      //     }
 
-          &:last-child:hover:before {
-            opacity: 1;
-          }
+      //     &:last-child:hover:before {
+      //       opacity: 1;
+      //     }
 
-          @for $j from 1 to $i {
-            &:nth-child(#{$j}):hover {
-              ~ li:last-child:before {
-                @include gooeyEffect($j);
-                top: (100% / $i) * ($j - 1);
-                animation: gooeyEffect-#{$j} $timing 1;
-              }
-            }
-          }
+      //     @for $j from 1 to $i {
+      //       &:nth-child(#{$j}):hover {
+      //         ~ li:last-child:before {
+      //           @include gooeyEffect($j);
+      //           top: (100% / $i) * ($j - 1);
+      //           animation: gooeyEffect-#{$j} $timing 1;
+      //         }
+      //       }
+      //     }
 
-          &:last-child:hover:before {
-            @include gooeyEffect($i);
-            top: (100% / $i) * ($i - 1);
-            animation: gooeyEffect-#{$i} $timing 1;
-          }
-        }
-      }
+      //     &:last-child:hover:before {
+      //       @include gooeyEffect($i);
+      //       top: (100% / $i) * ($i - 1);
+      //       animation: gooeyEffect-#{$i} $timing 1;
+      //     }
+      //   }
+      // }
     }
   }
 }
