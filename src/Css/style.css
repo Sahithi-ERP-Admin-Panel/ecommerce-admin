@@ -598,7 +598,7 @@
  .list-unstyled {
      list-style: none;
      padding-left: 0;
-     background: #d3d3d336;
+     background: #b3b6e96b;
      border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
  }
@@ -2160,7 +2160,8 @@
      border-color: var(--bs-table-border-color);
      margin-bottom: 1rem;
      vertical-align: top;
-     width: 100%
+     width: 100%;
+     font-size: 13px;
  }
  
  .table>:not(caption)>*>* {
@@ -17691,11 +17692,10 @@
      cursor: pointer;
      display: block;
      font-weight: 400;
-     padding: .625rem 1.625rem;
+     padding: 0.400rem 1rem;
      position: relative;
      text-decoration: none;
      transition: background .1s ease-in-out;
-     margin-top: 5px;
  }
  
  body[data-theme=dark] .sidebar-link,
@@ -17786,6 +17786,11 @@
      border-left-color: transparent;
  }
  
+li.sidebar-item {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
  .sidebar-link:hover,
  body[data-theme=dark] .sidebar-link:hover {
      color: #277bf4;
@@ -17914,9 +17919,9 @@
  .sidebar-dropdown .sidebar-link {
      background: transparent;
      border-left: 0;
-     color: #adb5bd;
+     color: #959da4;
      font-size: 90%;
-     font-weight: 400;
+     font-weight: 500;
      /* padding: .625rem 1.5rem .625rem 3.25rem */
  }
  
@@ -17950,12 +17955,12 @@
  .sidebar-dropdown .sidebar-item .sidebar-link:hover {
      background: transparent;
      border-left: 0;
-     color: #e9ecef;
-     font-weight: 400
+     color: #518be1;
+     font-weight: 500
  }
  
  body[data-theme=dark] .sidebar-dropdown .sidebar-item .sidebar-link:hover {
-     color: #e9ecef
+     color: #518be1
  }
  
  body[data-theme=light] .sidebar-dropdown .sidebar-item .sidebar-link:hover {
@@ -17963,7 +17968,7 @@
  }
  
  body[data-theme=colored] .sidebar-dropdown .sidebar-item .sidebar-link:hover {
-     color: #e9ecef
+     color:#518be1
  }
  
  body[data-theme=colored] .sidebar-dropdown .sidebar-item .sidebar-link:hover,
@@ -17980,7 +17985,7 @@
      background: transparent;
      border-left: 0;
      color: #518be1;
-     font-weight: 400
+     font-weight: 500;
  }
  
  body[data-theme=dark] .sidebar-dropdown .sidebar-item.active .sidebar-link,
@@ -35685,3 +35690,86 @@
     background-color: orange !important;
     background: orange !important;
 }
+
+.sidebar-wrapper.collapsed .sidebar {
+    width: 80px; /* Adjust the collapsed width */
+  }
+  
+  .sidebar-collapsed {
+
+    display: none; /* Hide text when collapsed */
+    transition: width 0.3s ease;
+  }
+  
+  .sidebar-collapsed .sidebar-link svg {
+    margin: 0 auto; /* Center the icons */
+  }
+
+  .sidebar-wrapper{
+    top: 0;
+    left: -250px; /* Hidden off-screen initially */
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    display: none;
+  }
+  .sidebar-wrapper.active-side-bar-wrapper {
+    transform: translateX(0);
+    display: block;
+  }
+
+  /* .sidebar {
+   
+    top: 0;
+    left: -250px; 
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+   opacity: 0; 
+  }
+  
+  .sidebar.active-side-bar {
+    transform: translateX(0);
+     opacity: 1; 
+  } */
+  
+  .sidebar-hide {
+    display: none;
+  }
+
+  /* .side-wrap{
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    display: none;
+  }
+  .side-wrap.active-side-wrap{
+    transform: translateX(0);
+    display: block;
+  } */
+
+  .side-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 0;
+    visibility: hidden; /* Hides the element from view, but keeps it for transitions */
+  }
+  
+  .side-wrap.active-side-wrap {
+    position: relative;
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible; /* Reveals the element smoothly */
+  }
+  .side-wrap.deactive-side-wrap {
+    transform: translateX(0);
+    opacity: 0;
+    visibility: hidden; /* Reveals the element smoothly */
+  }
+
+  .smooth-main-transition{
+    transition: max-width 0.5s ease, transform 0.5s ease;
+  }
+  .smooth-main-transition.expanded {
+    transform: scale(1.1); /* Slight scaling to create bubble effect */
+  }

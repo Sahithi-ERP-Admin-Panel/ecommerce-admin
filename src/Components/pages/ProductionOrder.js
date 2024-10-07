@@ -1,8 +1,10 @@
+
 import messages from '../../statics/messages.json'
-const production = ()=>{
+
+const ProductionOrder = ()=>{
     return(
         <div className="box-body border b-white rounded-2">        
-        <h4 className="p-2 m-0 border-bottom">{messages.production_receiving_label}</h4>
+        <h4 className="p-2 m-0 border-bottom">{messages.production_order}</h4>
         <div className="row p-2">
             <div className="col-1 d-flex justify-content-start align-items-bottom ">
                 <select className="px-3 py-1 border rounded-1 d-inline">
@@ -15,16 +17,16 @@ const production = ()=>{
                 <table class="table table-striped border rounded">
                     <thead>
                         <tr>
-                            <th className="text-center">{messages.sno_lable}</th>
-                            <th className="text-center">{messages.po_no_label}</th>
-                            <th className="text-center">{messages.line_no_label}</th>
-                            <th className="text-center">{messages.gf_label}</th>
-                            <th className="text-center">{messages.gw_label}</th>
-                            <th className="text-center">{messages.qty_received_label}</th>
-                            <th className="text-center">{messages.dockdates_label}</th>
-                            <th className="text-center">{messages.notes_label}</th>
-                            <th className="text-center">{messages.est_shipdate_label}</th>
-                            <th className="text-center">{messages.est_shipqty_label}</th>
+                            <th>{messages.sno_lable}</th>
+                            <th>{messages.order_no_label}</th>
+                            <th>{messages.customer_no_label}</th>
+                            <th>{messages.po_no_label}</th>
+                            <th>{messages.shipping_date_label}</th>
+                            <th>{messages.shipping_method_label}</th>
+                            <th>{messages.part_number_label}</th>
+                            <th>{messages.quantity_label}</th>
+                            <th>{messages.comments_label}</th>
+                            <th>{messages.status_label}</th>
                             
                         </tr>
                     </thead>
@@ -39,7 +41,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">In-Process</a></td>
+                            <td><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Shipping</a></td>
                             
                         </tr>
                         <tr>
@@ -52,7 +54,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-purple rounded" p-2="">Pending</a></td>
+                            <td><a class="p-1 px-2 text-decoration-none text-light bg-purple rounded" p-2="">Released</a></td>
                         </tr>
                         <tr>
                             <td>3</td>
@@ -64,7 +66,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Credit hold</a></td>
+                            <td><a class="p-1 px-2 text-decoration-none text-light bg-success rounded" p-2="">Completed</a></td>
                         </tr>
                         <tr>
                             <td>4</td>
@@ -76,7 +78,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-danger rounded" p-2="">Waiting on Parts</a></td>
+                            <td><a class="p-1 px-2 text-decoration-none text-light bg-danger rounded" p-2="">Failed</a></td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -88,7 +90,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-warning rounded" p-2="">Shipped</a></td>
+                            <td><a class="p-1 px-2 text-decoration-none text-light bg-warning rounded" p-2="">Refunded</a></td>
                         </tr>
                         <tr>
                             <td>5</td>
@@ -100,7 +102,7 @@ const production = ()=>{
                             <td>abc</td>
                             <td>abc</td>
                             <td>abc</td>
-                            <td className="text-center"><a class="p-1 px-2 text-decoration-none text-light bg-orange rounded" p-2="">Pending</a></td>
+                            <td><a class="p-1 px-2 text-decoration-none text-light bg-orange rounded" p-2="">Pending</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -123,5 +125,4 @@ const production = ()=>{
         </div>
     )
 }
-
-export default production;
+export default ProductionOrder;
