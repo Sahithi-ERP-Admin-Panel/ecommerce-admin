@@ -18022,7 +18022,7 @@ li.sidebar-item {
  
  .sidebar [aria-expanded=true]:after,
  .sidebar [data-bs-toggle=collapse]:not(.collapsed):after {
-     top: 1.4rem;
+     top: 1.1rem;
      transform: rotate(-135deg)
  }
  

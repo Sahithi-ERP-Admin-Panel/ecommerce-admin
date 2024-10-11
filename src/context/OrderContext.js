@@ -8,41 +8,6 @@ const OrderContext = () => {
            if(response.status !== 200) throw new Error(`Can't open  with status ${response.status}`);
                 return response.data; 
 
-            // let response = await fetch('https://gigaflightinc.cetecerp.com/api/order', {
-            //     method: 'GET',
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-type':'application/json'
-            //     },
-            //     body: JSON.stringify({
-            //         preshared_token: 'oOmRx58%3B-CDo9HbPX',
-            //     })
-            // });
-    
-            // if(response.status !== 200) throw new Error(`Can't open  with status ${response.status}`);
-            // return response.json();
-            debugger
-
-            // $.ajax({
-            //     url: 'https://gigaflightinc.cetecerp.com/api/order', 
-            //     type: 'GET',
-            //     dataType: 'json', 
-            //     data: { 
-            //         preshared_token: 'oOmRx58%3B-CDo9HbPX'
-            //     }, 
-            //     success: function(response) {
-            //         debugger
-            //         console.log('Success:', response);
-            //     },
-            //     error: function(xhr, status, error) {
-            //         debugger
-            //         console.error('Error:', error);
-            //     },
-            //     complete: function(xhr, status) {
-            //         debugger
-            //         console.log('Request complete:', status);
-            //     }
-            // });
 
 
 
@@ -52,7 +17,45 @@ const OrderContext = () => {
         }
     };
 
-    return { orderFetch }; 
+    const fetchOrderDetails = async (orderId) => {
+        try {
+            debugger
+            const response = await axios.get(`http://localhost:5000/orderService/order?orderId=${orderId}`);
+            if (response.status !== 200) throw new Error(`Can't open with status ${response.status}`);
+            return response.data;
+        } catch (err) {
+            console.error(`Error fetching details for order ID ${orderId}:`, err);
+            throw err;
+        }
+    };
+
+    return { orderFetch,fetchOrderDetails }; 
 };
 
 export default OrderContext;
+
+
+// import axios from 'axios';
+
+// const OrderContext = () => {
+//     const fetchOrders = async (page, itemsPerPage, searchTerm, index) => {
+//         try {
+//             const response = await axios.get("http://localhost:5000/orderService/fetchOrderData", {
+//                 params: {
+//                     page,
+//                     maxRecords: itemsPerPage,
+//                     searchTerm,
+//                     index  // Include the index here
+//                 }
+//             });
+//             return response.data;
+//         } catch (err) {
+//             console.error("Fetch error:", err);
+//             throw err;
+//         }
+//     };
+    
+// };
+
+//export default OrderContext;
+

@@ -46,5 +46,6 @@
     "dockdates_label": "Dock dates",
     "notes_label": "Notes/Comments",
     "est_shipdate_label": "Est. Shipping Date",
-    "est_shipqty_label": "Est. Shipping Qty"
+    "est_shipqty_label": "Est. Shipping Qty",
+    "action_label":"Action"
 }
