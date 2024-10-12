@@ -4,16 +4,68 @@ const axios = require('axios');
 const api = require('../api.json');
 
 // Example: Get all orders
+// router.get('/featchOrderData', async (req, res) => {
+//   try {
+//     const { index=0, maxRecords=10, searchTerm=null } = req.query;
+    
+
+//     const springApiUrl = `${api.server_host}${api.order_fetch}?preshared_token=${api.auth_token}`;
+//     const response = await axios.get(springApiUrl);
+//     const mainOrderData = response.data
+//     res.json(response.data);  // Send the fetched order data back to the client
+//   } catch (error) {
+//     console.error('Error fetching order data:', error.message);
+//     res.status(500).json({ message: 'Error fetching order data', error: error.message });
+//   }
+// });
+
 router.get('/featchOrderData', async (req, res) => {
   try {
+
+    const index = parseInt(req.query.index, 10) || 0;
+    const maxRecords = parseInt(req.query.maxRecords, 10) || 10;
+    const searchTerm = req.query.searchTerm || ''; 
     const springApiUrl = `${api.server_host}${api.order_fetch}?preshared_token=${api.auth_token}`;
+
     const response = await axios.get(springApiUrl);
-    res.json(response.data);  // Send the fetched order data back to the client
+    if (Array.isArray(response.data)) {
+      let filteredData = response.data;
+      if (searchTerm) {
+        filteredData = filteredData.filter(order =>
+          order.customer_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          order.ordernum.includes(searchTerm) ||
+          order.closed.toString() === searchTerm ||
+          order.ordered_on.includes(searchTerm) ||
+          order.total_resale.toString().includes(searchTerm) ||
+          order.buyer.toLowerCase().includes(searchTerm.toLowerCase())
+        );
+      }
+      const processedData = filteredData.slice(index, index + maxRecords);
+      const detailedDataPromises = processedData.map(order => featchOrderById(order.id));
+      const detailedData = await Promise.all(detailedDataPromises);
+      const finalData = {
+        order : detailedData,
+        totalRecords:response.data.length
+      }
+      res.json(finalData);
+    } else {
+      res.status(400).json({ message: 'Expected an array of order data' });
+    }
+    
   } catch (error) {
     console.error('Error fetching order data:', error.message);
     res.status(500).json({ message: 'Error fetching order data', error: error.message });
   }
 });
+
+// Fetch order details by ID
+const featchOrderById = async (orderId) => {
+  const springApiUrl = `${api.server_host}${api.order_fetch}/${orderId}?preshared_token=${api.auth_token}`;
+  const response = await axios.get(springApiUrl);
+  const data = response.data;
+  return data;
+};
+
 
 // Fetch details for a specific order by ID
 router.get('/order', async (req, res) => {

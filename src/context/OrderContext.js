@@ -1,21 +1,27 @@
 import axios from 'axios';
 import $ from 'jquery';
 const OrderContext = () => {
-    const orderFetch = async () => {
-        try {
-            const response = await axios.get("http://localhost:5000/orderService/featchOrderData");
-           // console.log(response.data);
-           if(response.status !== 200) throw new Error(`Can't open  with status ${response.status}`);
-                return response.data; 
+    const orderFetch = async (index, maxRecords, searchTerm) => {
+    try {
+        const response = await axios.get("http://localhost:5000/orderService/featchOrderData", {
+            params: {
+                index: index,
+                maxRecords: maxRecords,
+                searchTerm: searchTerm
+            }
+        });
 
+        // Check the response status
+        if (response.status !== 200) throw new Error(`Can't open with status ${response.status}`);
+        
+        return response.data;
 
+    } catch (err) {
+        console.error("Fetch error:", err);
+        throw err;
+    }
+};
 
-
-        } catch (err) {
-            console.error("Fetch error:", err);
-            throw err; 
-        }
-    };
 
     const fetchOrderDetails = async (orderId) => {
         try {
