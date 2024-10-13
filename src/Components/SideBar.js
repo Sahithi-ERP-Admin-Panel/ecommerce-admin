@@ -39,10 +39,10 @@ const SideBar = ({ activeMenu, setActiveMenu ,isSidebarCollapsed,toggleSidebar,h
 						</li>
 
 						<li class={`sidebar-item ${activeMenu === '/orders' ? 'active' : ''}`}>
-							<a class="sidebar-link" href="/orders" onClick={() => handleMenuClick('/orders')}>
+							<Link class="sidebar-link" to="/orders" onClick={() => handleMenuClick('/orders')}>
 								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sliders align-middle"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
 								<span class="align-middle">{messages.orders_label}</span>
-							</a>
+							</Link>
 						</li>
 
 						<li class={`sidebar-item ${activeMenu === '/production' || activeMenu === '/receivingproduction' || activeMenu === '/warehouse' ? 'active' : ''}`}>
@@ -54,7 +54,7 @@ const SideBar = ({ activeMenu, setActiveMenu ,isSidebarCollapsed,toggleSidebar,h
 							</a>
 							<ul id="receiving" class={`sidebar-dropdown list-unstyled collapse ${activeMenu === '/production' || activeMenu === '/receivingproduction' || activeMenu === '/warehouse' ? 'show' : ''}`} data-bs-parent="#sidebar" >
 								{/* <li class="sidebar-item active"><a class="sidebar-link" href="/production" onClick={() => handleMenuClick('/production')}>{messages.production_label}</a></li> */}
-								<li class={`sidebar-item ${activeMenu === '/receivingproduction' ?'active':''}`}><a class="sidebar-link" href="/receivingproduction" onClick={() => handleMenuClick('/receivingproduction')}>{messages.production_label}</a></li>
+								<li class={`sidebar-item ${activeMenu === '/receivingproduction' ?'active':''}`}><Link class="sidebar-link" to="/receivingproduction" onClick={() => handleMenuClick('/receivingproduction')}>{messages.production_label}</Link></li>
 								<li class={`sidebar-item ${activeMenu === '/warehouse' ?'active':''}`}><a class="sidebar-link" href="/warehouse" onClick={() => handleMenuClick('/warehouse')}>{messages.warehouse_label}</a></li>
 							</ul>
 						</li>
