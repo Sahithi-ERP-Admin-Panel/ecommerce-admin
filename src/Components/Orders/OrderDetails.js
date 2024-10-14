@@ -1,6 +1,6 @@
 import React from 'react';
 
-const OrderDetails = ({ details }) => {
+const OrderDetails = ({ details ,getStatusById}) => {
     debugger
     return (
         <div className='p-3'>
@@ -24,7 +24,7 @@ const OrderDetails = ({ details }) => {
                             {/* <td>{orderItem.customerpo || 'N/A'}</td>
                             <td>{orderItem.customerpo || 'N/A'}</td> */}
                             <td>{orderItem.oorderqty || 'N/A'}</td>
-                            <td>{orderItem.status || 'N/A'}</td>
+                            <td>{getStatusById(orderItem.status) || 'N/A'}</td>
                             {/* <td>{orderItem.shipto_countryid || 'N/A'}</td> */}
                         </tr>
                     ))}

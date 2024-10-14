@@ -1,0 +1,18 @@
+[
+    {"Id": 1, "status": "admin"},
+    {"Id": 2, "status": "N/A"},
+    {"Id": 3, "status": "N/A"},
+    {"Id": 4, "status": "prep_saw_mill"},
+    {"Id": 5, "status": "vendor_outsource"},
+    {"Id": 6, "status": "machine_1"},
+    {"Id": 7, "status": "machine_2"},
+    {"Id": 8, "status": "labeling_area"},
+    {"Id": 9, "status": "clean_room"},
+    {"Id": 10, "status": "inspection"},
+    {"Id": 11, "status": "shipping"},
+    {"Id": 12, "status": "production"},
+    {"Id": 13, "status": "N/A"},
+    {"Id": 14, "status": "finished_goods"},
+    {"Id": 15, "status": "on_truck"}
+    
+]

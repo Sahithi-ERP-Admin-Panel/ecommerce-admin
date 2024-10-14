@@ -179,7 +179,7 @@ import orderContext from '../../context/OrderContext';
 import OrderDetails from './OrderDetails';
 import countriesData from '../../statics/countries.json';
 import shipmentData from '../../statics/shipmentsData.json';
-
+import statuses from '../../statics/status.json'
 const Orders = () => {
     const { orderFetch } = orderContext();
     const [orderData, setOrderData] = useState([]);
@@ -228,6 +228,10 @@ const Orders = () => {
     const getShipmentMethodById = (id) => {
         const shipment = shipmentData.find(ship => ship.Id == id);
         return shipment ? shipment.MethodOfShipment : 'N/A';
+    };
+    const getStatusById = (id) => {
+        const status = statuses.find(ship => ship.Id == id);
+        return status ? status.status : 'N/A';
     };
 
     const handleKeyPress = (event) => {
@@ -306,7 +310,7 @@ const Orders = () => {
                                                 <td>{getCountryNameById(order.shipto_country_id)}</td>
                                                 <td></td>
                                                 <td className="text-center">
-                                                    <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">{order.orderstatus || 'N/A'}</a>
+                                                    <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">{getStatusById(order.orderstatus) || 'N/A'}</a>
                                                 </td>
                                                 <td className="text-center">
                                                     <button
@@ -322,7 +326,7 @@ const Orders = () => {
                                             {expandedRows.includes(order.id) && (
                                                 <tr>
                                                     <td colSpan="11">
-                                                        <OrderDetails details={order.lines} />
+                                                        <OrderDetails details={order.lines} getStatusById={getStatusById} />
                                                     </td>
                                                 </tr>
                                             )}
