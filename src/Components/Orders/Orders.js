@@ -302,7 +302,7 @@ const Orders = () => {
                                         <React.Fragment key={order.id}>
                                             <tr>
                                                 <td className='text-center'>{(currentPage - 1) * itemsPerPage + index + 1}</td>
-                                                <td>{order.ordernum}</td>
+                                                <td className='text-center'><a href={`https://gigaflightinc.cetecerp.com/order/MN${order.ordernum}/view`} target='_blank'>{order.ordernum}</a></td>
                                                 <td>{order.custnum}</td>
                                                 <td>{order.custponum}</td>
                                                 <td>{order.oorderdate}</td>
