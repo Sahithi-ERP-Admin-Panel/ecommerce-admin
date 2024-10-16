@@ -20,7 +20,7 @@ const OrderDetails = ({ details ,getStatusById}) => {
                     {
                     details.map(orderItem => (
                         <tr key={orderItem.revision_id}>
-                            <td>{orderItem.prcpart || 'N/A'}</td>
+                            <td>{orderItem.prcpart.substring(3) || 'N/A'}</td>
                             {/* <td>{orderItem.customerpo || 'N/A'}</td>
                             <td>{orderItem.customerpo || 'N/A'}</td> */}
                             <td>{orderItem.oorderqty || 'N/A'}</td>
