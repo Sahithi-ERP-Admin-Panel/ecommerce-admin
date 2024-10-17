@@ -2,6 +2,7 @@ import axios from 'axios';
 import $ from 'jquery';
 const OrderContext = () => {
     const orderFetch = async (index, maxRecords, searchTerm) => {
+        debugger
     try {
         const response = await axios.get("http://localhost:5000/orderService/featchOrderData", {
             params: {
