@@ -284,60 +284,72 @@ const Orders = () => {
                         <table className="table table-striped border rounded">
                             <thead>
                                 <tr>
-                                    <th className="text-center">{messages.sno_lable}</th>
+                                    <th className="text-center">{messages.line_item}</th>
                                     <th className="text-center">{messages.order_no_label}</th>
                                     <th className="text-center">{messages.customer_no_label}</th>
                                     <th className="text-center">{messages.po_no_label}</th>
+                                    <th className="text-center">{messages.part_no}</th>
+                                    <th className="text-center">{messages.status_label}</th>
                                     <th className="text-center">{messages.shipping_date_label}</th>
                                     <th className="text-center">{messages.shipping_method_label}</th>
                                     <th className="text-center">Country</th>
                                     <th className="text-center">{messages.comments_label}</th>
-                                    <th className="text-center">{messages.status_label}</th>
-                                    <th className="text-center">{messages.action_label}</th>
+                                    <th className="text-center">{messages.order_status_label}</th>
+                                    {/* <th className="text-center">{messages.action_label}</th> */}
                                 </tr>
                             </thead>
                             <tbody>
                                 {orderData.length > 0 ? (
-                                    orderData.map((order, index) => (
-                                        <React.Fragment key={order.id}>
-                                            <tr>
-                                                <td className='text-center'>{(currentPage - 1) * itemsPerPage + index + 1}</td>
-                                                <td className='text-center'><a href={`https://gigaflightinc.cetecerp.com/order/MN${order.ordernum}/view`} target='_blank'>{order.ordernum}</a></td>
-                                                <td>{order.custnum}</td>
-                                                <td>{order.custponum}</td>
-                                                <td>{order.oorderdate}</td>
-                                                <td>{getShipmentMethodById(order.shipvia)}</td>
-                                                <td>{getCountryNameById(order.shipto_country_id)}</td>
-                                                <td></td>
-                                                <td className="text-center">
-                                                    <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">{getStatusById(order.orderstatus) || 'N/A'}</a>
-                                                </td>
-                                                <td className="text-center">
-                                                    <button
-                                                        className="btn btn-link"
-                                                        onClick={() => toggleRowExpansion(order.id)}
-                                                    >
-                                                        {expandedRows.includes(order.id) ? <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg> : <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>}
-                                                    </button>
-                                                </td>
-                                            </tr>
-
-                                            {/* Expanded row details */}
-                                            {expandedRows.includes(order.id) && (
-                                                <tr>
-                                                    <td colSpan="11">
-                                                        <OrderDetails details={order.lines} getStatusById={getStatusById} />
-                                                    </td>
-                                                </tr>
-                                            )}
-                                        </React.Fragment>
+                                    orderData.map((order, orderIndex) => (
+                                    order.lines.length > 0 ? (
+                                        order.lines.map((line, lineIndex) => (
+                                        <tr key={`${order.id}-${lineIndex}`}>
+                                            {/* This displays order-specific information once per line */}
+                                            <td className='text-center'>
+                                            {/* Calculate the serial number (slno) for each row */}
+                                            {line.lineitem}
+                                            </td>
+                                            <td className='text-center'>
+                                            <a href={`https://gigaflightinc.cetecerp.com/order/MN${order.ordernum}/view`} target='_blank' rel='noopener noreferrer'>
+                                                {order.ordernum}
+                                            </a>
+                                            </td>
+                                            <td>{order.custnum}</td>
+                                            <td>{order.custponum}</td>
+                                            <td>{line.prcpart.substring(3) || 'N/A'}</td>
+                                            <td>
+                                            <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">
+                                                {getStatusById(line.status) || 'N/A'}
+                                            </a>
+                                            </td>
+                                            <td>{line.shipdate}</td>
+                                            <td>{getShipmentMethodById(order.shipvia)}</td>
+                                            <td>{getCountryNameById(order.shipto_country_id)}</td>
+                                            <td></td>
+                                            <td className="text-center">
+                                            <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">
+                                                {getStatusById(order.orderstatus) || 'N/A'}
+                                            </a>
+                                            </td>
+                                        </tr>
+                                        ))
+                                    ) : (
+                                        <tr key={order.id}>
+                                        <td colSpan="11" className="text-center">
+                                            No Data
+                                        </td>
+                                        </tr>
+                                    )
                                     ))
                                 ) : (
                                     <tr>
-                                        <td colSpan="11" className="text-center">No Orders found</td>
+                                    <td colSpan="14" className="text-center">
+                                        No Orders found
+                                    </td>
                                     </tr>
                                 )}
-                            </tbody>
+                                </tbody>
+
                         </table>
                     )}
                 </div>
@@ -367,3 +379,47 @@ const Orders = () => {
 };
 
 export default Orders;
+
+
+{/* <tbody>
+{orderData.length > 0 ? (
+    orderData.map((order, index) => (
+        <React.Fragment key={order.id}>
+            <tr>
+                <td className='text-center'>{(currentPage - 1) * itemsPerPage + index + 1}</td>
+                <td className='text-center'><a href={`https://gigaflightinc.cetecerp.com/order/MN${order.ordernum}/view`} target='_blank'>{order.ordernum}</a></td>
+                <td>{order.custnum}</td>
+                <td>{order.custponum}</td>
+                <td>{order.oorderdate}</td>
+                <td>{getShipmentMethodById(order.shipvia)}</td>
+                <td>{getCountryNameById(order.shipto_country_id)}</td>
+                <td></td>
+                <td className="text-center">
+                    <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">{getStatusById(order.orderstatus) || 'N/A'}</a>
+                </td>
+                {/* <td className="text-center">
+                    <button
+                        className="btn btn-link"
+                        onClick={() => toggleRowExpansion(order.id)}
+                    >
+                        {expandedRows.includes(order.id) ? <svg width="15" height="15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/></svg> : <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 320 512"><path d="M143 352.3L7 216.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.2 9.4-24.4 9.4-33.8 0z"/></svg>}
+                    </button>
+                </td> */}
+ //           </tr>
+
+            {/* Expanded row details */}
+            {/* {expandedRows.includes(order.id) && (
+                <tr>
+                    <td colSpan="11">
+                        <OrderDetails details={order.lines} getStatusById={getStatusById} />
+                    </td>
+                </tr>
+            )} */}
+//         </React.Fragment>
+//     ))
+// ) : (
+//     <tr>
+//         <td colSpan="11" className="text-center">No Orders found</td>
+//     </tr>
+// )}
+// </tbody> */}

@@ -47,5 +47,8 @@
     "notes_label": "Notes/Comments",
     "est_shipdate_label": "Est. Shipping Date",
     "est_shipqty_label": "Est. Shipping Qty",
-    "action_label":"Action"
+    "action_label":"Action",
+    "line_item":"Line Item",
+    "part_no":"Part No",
+    "order_status_label":"Order Status"
 }
