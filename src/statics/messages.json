@@ -50,5 +50,7 @@
     "action_label":"Action",
     "line_item":"Line Item",
     "part_no":"Part No",
-    "order_status_label":"Order Status"
+    "order_status_label":"Order Status",
+    "country_label":"Country",
+    "customer_name_label":"Customer Name"
 }
