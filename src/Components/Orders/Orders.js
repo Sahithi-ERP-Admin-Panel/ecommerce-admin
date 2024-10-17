@@ -286,13 +286,13 @@ const Orders = () => {
                                 <tr>
                                     <th className="text-center">{messages.line_item}</th>
                                     <th className="text-center">{messages.order_no_label}</th>
-                                    <th className="text-center">{messages.customer_no_label}</th>
+                                    <th className="text-center">{messages.customer_name_label}</th>
                                     <th className="text-center">{messages.po_no_label}</th>
                                     <th className="text-center">{messages.part_no}</th>
                                     <th className="text-center">{messages.status_label}</th>
                                     <th className="text-center">{messages.shipping_date_label}</th>
                                     <th className="text-center">{messages.shipping_method_label}</th>
-                                    <th className="text-center">Country</th>
+                                    <th className="text-center">{messages.country_label}</th>
                                     <th className="text-center">{messages.comments_label}</th>
                                     <th className="text-center">{messages.order_status_label}</th>
                                     {/* <th className="text-center">{messages.action_label}</th> */}
@@ -314,7 +314,7 @@ const Orders = () => {
                                                 {order.ordernum}
                                             </a>
                                             </td>
-                                            <td>{order.custnum}</td>
+                                            <td>{order.customer.name}</td>
                                             <td>{order.custponum}</td>
                                             <td>{line.prcpart.substring(3) || 'N/A'}</td>
                                             <td>
