@@ -36,7 +36,7 @@
     "po_label": "P.O #",
     "vendor_label": "Vendor",
     "pn_label": "P/N",
-    "priority_level_label": "Priority Level",
+    "priority_level_label": "Priority",
     "dockdate_label": "Est. Dock Date",
     "production_receiving_label": "Production Orders",
     "line_no_label": "Line",

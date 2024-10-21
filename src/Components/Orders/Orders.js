@@ -191,8 +191,10 @@ const Orders = () => {
     const [expandedRows, setExpandedRows] = useState([]);
 
     const fetchOrders = async (index, maxRecords, search) => {
+        debugger
         setLoading(true);
         const orders = await orderFetch(index, maxRecords, search);
+        debugger
         setOrderData(orders.order);
         setTotalRecords(orders.totalRecords);
         setLoading(false);
@@ -243,6 +245,27 @@ const Orders = () => {
 
       };
 
+      const getRowStyle = (date) => {
+        debugger
+        const today = new Date();
+        const targetDate = new Date(date);
+        const timeDiff = targetDate - today;
+        const diffDays =  Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+        
+        if (diffDays <= -2) {
+            return {Style:"background-color:red"};
+          } else if (diffDays === 0) {
+            return {Style:"background-color:yellow"};
+          } else if (diffDays <= 1) {
+            return {Style:"background-color:purple"};
+          }else if (diffDays <= 2) {
+            return {Style:"background-color:orange"};
+          } else if (diffDays <= 3) {
+            return {};
+          }
+        return {}; // Default style
+      };
+
     return (
         <div className="box-body border b-white rounded-2">
             <h4 className="p-2 m-0 border-bottom">Orders</h4>
@@ -281,7 +304,7 @@ const Orders = () => {
                             </div>
                         </div>
                     ) : (
-                        <table className="table table-striped border rounded">
+                        <table className="table border rounded">
                             <thead>
                                 <tr>
                                     <th className="text-center">{messages.line_item}</th>
@@ -303,7 +326,7 @@ const Orders = () => {
                                     orderData.map((order, orderIndex) => (
                                     order.lines.length > 0 ? (
                                         order.lines.map((line, lineIndex) => (
-                                        <tr key={`${order.id}-${lineIndex}`}>
+                                        <tr key={`${order.id}-${lineIndex}`} {...getRowStyle(line.orig_shipdate)} className={order.customer.name === 'Internal Account'?'d-none':''}> 
                                             {/* This displays order-specific information once per line */}
                                             <td className='text-center'>
                                             {/* Calculate the serial number (slno) for each row */}
@@ -322,9 +345,9 @@ const Orders = () => {
                                                 {getStatusById(line.status) || 'N/A'}
                                             </a>
                                             </td>
-                                            <td>{line.shipdate}</td>
+                                            <td>{line.orig_shipdate}</td>
                                             <td>{getShipmentMethodById(order.shipvia)}</td>
-                                            <td>{getCountryNameById(order.shipto_country_id)}</td>
+                                            <td className={getCountryNameById(order.shipto_country_id) !== 'United States'?'bg-dark text-light text-center':'text-center'}>{getCountryNameById(order.shipto_country_id)}</td>
                                             <td></td>
                                             <td className="text-center">
                                             <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">
