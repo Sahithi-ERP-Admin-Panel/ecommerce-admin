@@ -2,5 +2,6 @@
     "server_host" : "https://gigaflightinc.cetecerp.com",
 
     "auth_token" : "oOmRx58%3B-CDo9HbPX",
-    "order_fetch": "/api/order"
+    "order_fetch": "/api/order",
+    "po_featch":"/api/po"
 }

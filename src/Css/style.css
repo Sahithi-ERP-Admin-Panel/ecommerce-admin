@@ -35773,3 +35773,7 @@ li.sidebar-item {
   .smooth-main-transition.expanded {
     transform: scale(1.1); /* Slight scaling to create bubble effect */
   }
+
+  .table{
+    --bs-table-bg: none !important;
+  }
