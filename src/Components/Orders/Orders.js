@@ -191,10 +191,8 @@ const Orders = () => {
     const [expandedRows, setExpandedRows] = useState([]);
 
     const fetchOrders = async (index, maxRecords, search) => {
-        debugger
         setLoading(true);
         const orders = await orderFetch(index, maxRecords, search);
-        debugger
         setOrderData(orders.order);
         setTotalRecords(orders.totalRecords);
         setLoading(false);
@@ -246,20 +244,20 @@ const Orders = () => {
       };
 
       const getRowStyle = (date) => {
-        debugger
+        
         const today = new Date();
         const targetDate = new Date(date);
         const timeDiff = targetDate - today;
         const diffDays =  Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
         
         if (diffDays <= -2) {
-            return {Style:"background-color:red"};
+            return {Style:"display:none"};
           } else if (diffDays === 0) {
-            return {Style:"background-color:yellow"};
+            return {Style:"background-color:#ffff00a3"};
           } else if (diffDays <= 1) {
-            return {Style:"background-color:purple"};
+            return {Style:"background-color:#ff00ffd9"};
           }else if (diffDays <= 2) {
-            return {Style:"background-color:orange"};
+            return {Style:"background-color:#ff7d00cc"};
           } else if (diffDays <= 3) {
             return {};
           }
@@ -306,7 +304,7 @@ const Orders = () => {
                     ) : (
                         <table className="table border rounded">
                             <thead>
-                                <tr>
+                                <tr className="bg-light">
                                     <th className="text-center">{messages.line_item}</th>
                                     <th className="text-center">{messages.order_no_label}</th>
                                     <th className="text-center">{messages.customer_name_label}</th>
@@ -347,7 +345,7 @@ const Orders = () => {
                                                 {getStatusById(line.status) || 'N/A'}
                                             </a>
                                             </td>
-                                            <td>{line.orig_shipdate}</td>
+                                            <td>{line.shipdate?line.shipdate:line.orig_shipdate}</td>
                                             <td>{getShipmentMethodById(order.shipvia)}</td>
                                             <td className={getCountryNameById(order.shipto_country_id) !== 'United States'?'bg-dark text-light text-center':'text-center'}>{getCountryNameById(order.shipto_country_id)}</td>
                                             <td></td>
