@@ -54,6 +54,6 @@
     "country_label":"Country",
     "customer_name_label":"Customer Name",
     "order_pending_label":"Pending Order",
-    "order_completed_label":"Completed Orders"
+    "order_completed_label":"Completed Orders",
     "qty_label":"QTY"
 }
