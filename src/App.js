@@ -13,6 +13,8 @@ import DashboardContent from './Components/Dashboard/DashboardContent'
 import './Css/style.css'
 import Production from './Components/production/Production';
 import Warehouse from './Components/warehouse/Warehouse';
+import OrderPending from './Components/Orders/OrderPending';
+import OrderComplted from './Components/Orders/OrderComplted';
 function App() {
   return (
     <Router>
@@ -28,6 +30,8 @@ function App() {
               <Route path="customers" element={<Customers />} />
               {/* <Route path="orders" element={<Orders />} /> */}
               <Route path="orders" element={<Orders key={window.location.pathname} />} />
+              <Route path="orders-pending" element={<OrderPending/>} />
+              <Route path="orders-completed" element={<OrderComplted/>} />
               <Route path="payments" element={<Payments />} />
               <Route path="profile" element={<UserProfile />} />
               <Route path="projects" element={<Projects />} />
