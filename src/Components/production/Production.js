@@ -152,7 +152,8 @@ const Production = () => {
                                                     <td>abc</td>
                                                     <td>abc</td>
                                                     <td>{line.status}</td>
-                                                    <td>{produ.comment}</td>
+                                                    <td></td>
+                                                    {/* <td>{produ.comment}</td> */}
                                                     {/* <td>abc</td>
                                                     <td className="text-center">
                                                         <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">

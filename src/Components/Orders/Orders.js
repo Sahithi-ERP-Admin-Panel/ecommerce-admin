@@ -250,13 +250,13 @@ const Orders = () => {
         const timeDiff = targetDate - today;
         const diffDays =  Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
         
-        if (diffDays <= -2) {
+        if (diffDays < 0) {
             return {Style:"display:none"};
           } else if (diffDays === 0) {
-            return {Style:"background-color:#ffff00a3"};
-          } else if (diffDays <= 1) {
-            return {Style:"background-color:#ff00ffd9"};
-          }else if (diffDays <= 2) {
+            return {Style:"background-color:#f9e25b"};
+          } else if (diffDays === 1) {
+            return {Style:"background-color:#aa83f3"};
+          }else if (diffDays === 2) {
             return {Style:"background-color:#ff7d00cc"};
           } else if (diffDays <= 3) {
             return {};
@@ -324,7 +324,7 @@ const Orders = () => {
                                     orderData.map((order, orderIndex) => (
                                     order.lines.length > 0 ? (
                                         order.lines.map((line, lineIndex) => (
-                                        <tr key={`${order.id}-${lineIndex}`} {...getRowStyle(line.orig_shipdate)} className={order.customer.name === 'Internal Account'?'d-none':''}> 
+                                        <tr key={`${order.id}-${lineIndex}`} {...getRowStyle(line.shipdate?line.shipdate:line.orig_shipdate)} className={order.customer.name === 'Internal Account'?'d-none':''}> 
                                             {/* This displays order-specific information once per line */}
                                             <td className='text-center'>
                                             {/* Calculate the serial number (slno) for each row */}

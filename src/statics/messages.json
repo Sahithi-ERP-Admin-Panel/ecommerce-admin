@@ -52,5 +52,7 @@
     "part_no":"Part No",
     "order_status_label":"Order Status",
     "country_label":"Country",
-    "customer_name_label":"Customer Name"
+    "customer_name_label":"Customer Name",
+    "order_pending_label":"Pending Order",
+    "order_completed_label":"Completed Orders"
 }
