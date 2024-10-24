@@ -310,6 +310,7 @@ const Orders = () => {
                                     <th className="text-center">{messages.customer_name_label}</th>
                                     <th className="text-center">{messages.po_no_label}</th>
                                     <th className="text-center">{messages.part_no}</th>
+                                    <th className="text-center">{messages.qty_label}</th>
                                     <th className="text-center">{messages.status_label}</th>
                                     <th className="text-center">{messages.shipping_date_label}</th>
                                     <th className="text-center">{messages.shipping_method_label}</th>
@@ -338,6 +339,7 @@ const Orders = () => {
                                             <td>{order.customer.name}</td>
                                             <td>{order.custponum}</td>
                                             <td>{line.prcpart.substring(3) || 'N/A'}</td>
+                                            <td>{line.oorderqty || 'N/A'}</td>
                                             <td>
                                             <a className="p-1 px-2 text-decoration-none text-light bg-success rounded">
                                                 {getStatusById(line.status) || 'N/A'}
