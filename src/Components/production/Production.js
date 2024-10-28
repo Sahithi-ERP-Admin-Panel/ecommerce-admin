@@ -6,17 +6,19 @@ import shipmentData from '../../statics/shipmentsData.json';
 import statuses from '../../statics/status.json';
 
 const Production = () => {
-    const { productionDetailsFeatch } = receiveContext();
+    const { productionDetailsFeatch,VendorFeatch } = receiveContext();
     const [productionData, setProductionData] = useState([]);
     const [totalRecords, setTotalRecords] = useState(0);
     const [currentPage, setCurrentPage] = useState(1);
     const [itemsPerPage, setItemsPerPage] = useState(10);
     const [searchTerm, setSearchTerm] = useState('');
     const [loading, setLoading] = useState(false);
-
+    const [vendors,setVendors] = useState([]);
     const fetchProduction = async (index, maxRecords, search) => {
         setLoading(true);
         const production = await productionDetailsFeatch(index, maxRecords, search);
+        const vendorData = await VendorFeatch();
+        setVendors(vendorData);
         debugger
         setProductionData(production.production);
         setTotalRecords(production.totalRecords);
@@ -54,6 +56,10 @@ const Production = () => {
         return status ? status.status : 'N/A';
     };
 
+    const getVendorName = (id) => {
+        const ven = vendors.find((ven) => ven.vennum == id);
+        return ven ? ven.name : 'N/A';
+    };
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             fetchProduction(0, 10, searchTerm);
@@ -147,7 +153,7 @@ const Production = () => {
                                                 <tr key={`${produ.id}-${lineIndex}`}>
                                                     {/* <td>1</td> */}
                                                     <td className='text-center'>{produ.ponum}</td>
-                                                    <td>{produ.vennum}</td>
+                                                    <td>{getVendorName(produ.vennum)}</td>
                                                     <td>{line.linenum}</td>
                                                     <td>abc</td>
                                                     <td>abc</td>
