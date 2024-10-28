@@ -23,8 +23,23 @@ const ReceiveContext = () => {
     }
 };
 
+const VendorFeatch =async ()=>{
+    try {
+        const response = await axios.get("http://localhost:5000/receivingService/getVendors");
 
-return { productionDetailsFeatch }; 
+        // Check the response status
+        if (response.status !== 200) throw new Error(`Can't open with status ${response.status}`);
+        
+        return response.data;
+
+    } catch (err) {
+        console.error("Fetch error:", err);
+        throw err;
+    }
+}
+
+
+return { productionDetailsFeatch,VendorFeatch }; 
 };
 
 export default ReceiveContext;

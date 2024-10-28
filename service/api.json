@@ -3,5 +3,6 @@
 
     "auth_token" : "oOmRx58%3B-CDo9HbPX",
     "order_fetch": "/api/order",
-    "po_featch":"/api/po"
+    "po_featch":"/api/po",
+    "vendor_api":"/api/vendor"
 }

@@ -49,5 +49,18 @@ router.get('/productionDetailsFeatch', async (req, res) => {
     const data = response.data;
     return data;
   };
+
+  router.get('/getVendors', async (req, res) => {
+    try{
+      const springApiUrl = `${api.server_host}${api.vendor_api}?preshared_token=${api.auth_token}`;
+      const response = await axios.get(springApiUrl);
+      const data = response.data;
+      return res.json(data);
+
+    } catch (error) {
+      console.error('Error fetching order data:', error.message);
+      res.status(500).json({ message: 'Error fetching order data', error: error.message });
+    }
+  });
   
 module.exports = router;
